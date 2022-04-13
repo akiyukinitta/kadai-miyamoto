@@ -1,0 +1,539 @@
+@charset 'UTF-8';
+
+/*
+* ress.css (https://github.com/filipelinhares/ress)
+*/
+
+/* =======================================
+    all
+   ======================================= */
+
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Parisienne&display=swap");
+
+html {
+  box-sizing: border-box;
+}
+
+body {
+  color: #555;
+  font-size: 16px;
+  font-family: "Noto Serif JP", serif;
+}
+
+.flex {
+  display: flex;
+}
+
+.grid {
+  display: grid;
+}
+
+@media screen and (min-width: 800px) {
+  body {
+    font-size: 18px;
+    /* タブレット・PCの時 */
+  }
+
+  .sp-only {
+    display: none;
+  }
+
+  .pc_flex {
+    display: flex;
+  }
+}
+
+h1 {
+  padding-top: 20px;
+  color: #fff;
+  text-align: center;
+  font-weight: normal;
+  font-size: 300%;
+  font-family: "Parisienne", cursive;
+}
+
+h2 {
+  color: #b6e2a2;
+  text-align: center;
+  letter-spacing: 0.046em;
+  font-weight: normal;
+  font-size: 64px;
+  font-family: "Parisienne", cursive;
+}
+
+h3 {
+  text-align: center;
+  letter-spacing: 0.158em;
+  font-size: 24px;
+  line-height: 1.38em;
+}
+
+p {
+  letter-spacing: 0.187em;
+  line-height: 2.375;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  width: 100%;
+
+  object-fit: cover;
+}
+
+@media screen and (min-width: 800px) {
+  h1 {
+    padding-top: 30px;
+    font-size: 400%;
+  }
+}
+
+/* =======================================
+    hbm
+   ======================================= */
+
+#hbm {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 10000;
+  width: 80px;
+  height: 80px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#hbm span,
+#hbm span::before,
+#hbm span::after {
+  position: absolute;
+  display: inline-block;
+  width: 48px;
+  height: 2px;
+  background: #555;
+  transition: all 0.4s; /*アニメーションの設定*/
+}
+
+#hbm span::before {
+  margin-top: -16px;
+  content: "";
+}
+
+#hbm span {
+  top: 48px;
+  right: 30px;
+}
+
+#hbm span::after {
+  margin-top: 16px;
+  content: "";
+}
+
+/* 以下overlay__manu表示時のhbm */
+
+#hbm.show span::before {
+  background: #555;
+  transform: translateY(16px) rotate(45deg);
+}
+
+#hbm.show span::after {
+  background: #555;
+  transform: translateY(-16px) rotate(-45deg);
+}
+
+#hbm.show span {
+  background: #fff0;
+}
+
+/* =======================================
+   #overlay__menu
+   ======================================= */
+
+#overlay__menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  display: none;
+  width: 100%;
+  height: 100%;
+  background: rgba(182, 226, 162, 0.8);
+}
+
+#overlay__menu .overlay_m_list {
+  display: flex;
+  padding-top: 20vh;
+  padding-bottom: 20vh;
+  height: 100%;
+  height: 100%;
+  text-align: center;
+
+  flex-flow: column;
+  justify-content: space-evenly;
+}
+
+#overlay__menu .overlay_m_list h2 {
+  padding-bottom: 0.5em;
+  color: #fff;
+  font-size: 200%;
+}
+
+#overlay__menu .overlay_m_list a {
+  color: #fff;
+}
+
+/* =======================================
+    mv
+   ======================================= */
+
+.mv {
+  width: 100%;
+  height: 100vh;
+}
+
+.mv::before {
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  background-color: #768686b0;
+  background-image: url(../image/IMAGE.png);
+  background-position: center;
+  background-size: cover;
+  content: "";
+
+  background-blend-mode: soft-light;
+}
+
+.mv p {
+  padding-top: 50%;
+  color: #fff;
+  text-align: center;
+  letter-spacing: 0.368em;
+  font-family: "Noto Serif JP", serif;
+}
+
+.page-top {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  width: 60px;
+  height: 50px;
+  background: #b6e2a2;
+  text-align: center;
+}
+
+i.fa-angle-up {
+  color: #fff;
+  font-size: 24px;
+  line-height: 50px;
+}
+
+main > div {
+  padding-top: 60px;
+}
+
+@media screen and (min-width: 800px) {
+  .mv p {
+    padding-top: 384px;
+  }
+
+  main > div {
+    padding-top: 148px;
+  }
+}
+
+/* =======================================
+    main
+   ======================================= */
+
+main {
+  background: #f8f9fa;
+}
+
+main > div {
+  padding-right: 16px;
+  padding-left: 16px;
+  /* コンテンツ左右の余白 */
+}
+
+@media screen and (min-width: 800px) {
+  main > div {
+    padding-right: 3.33vw;
+    padding-left: 3.33vw;
+    /* コンテンツ左右の余白 */
+  }
+}
+
+/* btn */
+
+.p-btn {
+  margin: auto;
+  margin-top: 46px;
+  margin-bottom: 3em;
+  border: solid 1px #ccc;
+  text-align: center;
+  cursor: pointer;
+}
+
+.a-btn {
+  display: block;
+  padding: 0.4em;
+  color: #555;
+}
+
+/* =======================================
+    about
+   ======================================= */
+
+.about__txt {
+  padding-top: 1.6em;
+  text-align: center;
+}
+
+.about__btn {
+  width: 10em;
+}
+
+@media screen and (min-width: 800px) {
+  .about {
+    flex-direction: row-reverse;
+    margin-right: 10vw;
+    margin-left: 10vw;
+
+    align-items: center;
+  }
+
+  .about div {
+    padding: 70px;
+  }
+
+  .about .about img {
+    width: 50%;
+  }
+}
+
+/* =======================================
+    menu
+   ======================================= */
+
+.menu__btn {
+  width: 13em;
+}
+
+/* =======================================
+    carousel
+   ======================================= */
+
+.carousel li {
+  margin-top: 46px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+}
+
+.carousel li img {
+  width: 100%;
+}
+
+.menu__itemCaption {
+  height: 120px;
+}
+
+.menu__item-ttl {
+  padding-left: 10px;
+  font-size: 16px;
+}
+
+.menu__item-txt {
+  position: absolute;
+  bottom: 2em;
+  padding-left: 10px;
+  font-size: 13px;
+}
+
+.slick-dots {
+  text-align: center;
+}
+.slick-dots li {
+  display: inline-block;
+  margin: 0 15px;
+}
+.slick-dots li button {
+  position: relative;
+  text-indent: -9999px;
+}
+.slick-dots li button:before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: #ccc;
+  content: "●"; /* CSSでどうにかしたい */
+  text-indent: 0;
+  font-size: 16px;
+}
+.slick-dots li.slick-active button:before {
+  color: #b6e2a2;
+}
+
+/* =======================================
+    contact
+   ======================================= */
+
+.contact {
+  text-align: center;
+}
+
+.contact img {
+  height: 300px;
+
+  object-fit: cover;
+}
+
+.contact .contact__txt {
+  font-size: 26px;
+}
+
+.contact .contact__tel {
+  font-size: 19px;
+}
+
+.contact .contact__time {
+  font-size: 13px;
+}
+
+.contact .contact__btn {
+  width: 10em;
+}
+
+@media screen and (min-width: 800px) {
+  .contact {
+    flex-direction: row-reverse;
+    margin-right: 10vw;
+    margin-left: 10vw;
+
+    align-items: center;
+  }
+
+  .contact div {
+    padding: 70px;
+    width: 40%;
+  }
+
+  .contact img {
+    width: 60%;
+  }
+}
+
+/* =======================================
+    blog
+   ======================================= */
+
+.blog .blog__item {
+  margin-top: 46px;
+  text-align: center;
+}
+
+.blog .blog__item img {
+  width: 100%;
+  height: 200px;
+}
+
+.blog__item-ttl {
+  margin-top: -5px; /* 謎空白消すため。後で治せそうなら直す */
+  width: 100%;
+  height: 3em;
+  background: #b6e2a2;
+  color: #fff;
+  font-size: 13px;
+  line-height: 3em;
+}
+
+@media screen and (min-width: 800px) {
+  .blog .blog__item {
+    margin: 20px;
+    width: 30%;
+  }
+
+  .blog .blog__item img {
+    height: 300px;
+  }
+}
+
+/* =======================================
+    blog
+   ======================================= */
+
+.map iframe {
+  margin-top: 46px;
+  width: 100%;
+  height: 48.6vh;
+}
+
+.map {
+  padding-bottom: 10vh;
+}
+
+/* =======================================
+    footer
+   ======================================= */
+
+footer {
+  text-align: center;
+}
+
+footer .footer__txt {
+  margin-top: 2em;
+  font-size: 13px;
+}
+
+footer .footer__ttl {
+  color: #555;
+  font-size: 250%;
+}
+
+footer .footer__menu {
+  margin: auto;
+  margin-top: 1em;
+  width: 60%;
+
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+footer .footer__menu a {
+  margin: 1em;
+  color: #555;
+  font-size: 13px;
+}
+
+footer .footer__copyright {
+  margin-top: 2em;
+  margin-bottom: 50px;
+  font-size: 11px;
+}
+
+@media screen and (min-width: 800px) {
+  footer .footer__caption {
+    float: left;
+    margin-left: 3.33vw;
+  }
+
+  footer .footer__menu {
+    float: right;
+    margin-right: 3.33vw;
+    width: 30%;
+  }
+
+  footer .footer__copyright {
+    clear: both;
+    margin-right: 3.33vw;
+    text-align: right;
+  }
+}
