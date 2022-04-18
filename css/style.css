@@ -361,14 +361,17 @@ main > div {
 .slick-dots {
   text-align: center;
 }
+
 .slick-dots li {
   display: inline-block;
   margin: 0 15px;
 }
+
 .slick-dots li button {
   position: relative;
   text-indent: -9999px;
 }
+
 .slick-dots li button:before {
   position: absolute;
   top: 0;
@@ -378,6 +381,7 @@ main > div {
   text-indent: 0;
   font-size: 16px;
 }
+
 .slick-dots li.slick-active button:before {
   color: #b6e2a2;
 }
@@ -446,7 +450,7 @@ main > div {
 }
 
 .blog__item-ttl {
-  margin-top: -5px; /* 謎空白消すため。後で治せそうなら直す */
+  margin-top: -5px; /* 空白消すため。後で治せそうなら直す */
   width: 100%;
   height: 3em;
   background: #b6e2a2;
