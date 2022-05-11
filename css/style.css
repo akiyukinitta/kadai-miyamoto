@@ -53,6 +53,8 @@ h1 {
 }
 
 h2 {
+  padding-top: 30px;
+  padding-bottom: 30px;
   color: #b6e2a2;
   text-align: center;
   letter-spacing: 0.046em;
@@ -83,7 +85,6 @@ ul {
 
 img {
   width: 100%;
-
   object-fit: cover;
 }
 
@@ -202,17 +203,21 @@ img {
   z-index: -1;
   width: 100%;
   height: 100%;
-  background-color: #768686b0;
   background-image: url(../image/IMAGE.png);
   background-position: center;
   background-size: cover;
   content: "";
+}
 
-  background-blend-mode: soft-light;
+.mv__ttl-txt {
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .mv p {
-  padding-top: 50%;
   color: #fff;
   text-align: center;
   letter-spacing: 0.368em;
@@ -235,11 +240,7 @@ i.fa-angle-up {
   line-height: 50px;
 }
 
-main > div {
-  padding-top: 60px;
-}
-
-@media screen and (min-width: 800px) {
+/* @media screen and (min-width: 800px) {
   .mv p {
     padding-top: 384px;
   }
@@ -247,7 +248,7 @@ main > div {
   main > div {
     padding-top: 148px;
   }
-}
+} */
 
 /* =======================================
     main
@@ -263,18 +264,29 @@ main > div {
   /* コンテンツ左右の余白 */
 }
 
+.contents {
+  padding-top: 80px;
+}
+
 @media screen and (min-width: 800px) {
   main > div {
     padding-right: 3.33vw;
     padding-left: 3.33vw;
     /* コンテンツ左右の余白 */
   }
+
+  .contents {
+    padding-top: 140px;
+  }
 }
 
 /* btn */
+.div-btn {
+  text-align: center;
+}
 
 .p-btn {
-  margin: auto;
+  display: inline-block;
   margin-top: 46px;
   margin-bottom: 3em;
   border: solid 1px #ccc;
@@ -284,7 +296,7 @@ main > div {
 
 .a-btn {
   display: block;
-  padding: 0.4em;
+  padding: 0.4em 1em;
   color: #555;
 }
 
@@ -292,13 +304,13 @@ main > div {
     about
    ======================================= */
 
+.about div {
+  flex: 1;
+}
+
 .about__txt {
   padding-top: 1.6em;
   text-align: center;
-}
-
-.about__btn {
-  width: 10em;
 }
 
 @media screen and (min-width: 800px) {
@@ -306,12 +318,12 @@ main > div {
     flex-direction: row-reverse;
     margin-right: 10vw;
     margin-left: 10vw;
-
     align-items: center;
   }
 
-  .about div {
-    padding: 70px;
+  .about div:first-child {
+    padding: 70px 0;
+    width: 30%;
   }
 
   .about .about img {
@@ -322,10 +334,6 @@ main > div {
 /* =======================================
     menu
    ======================================= */
-
-.menu__btn {
-  width: 13em;
-}
 
 /* =======================================
     carousel
@@ -361,14 +369,17 @@ main > div {
 .slick-dots {
   text-align: center;
 }
+
 .slick-dots li {
   display: inline-block;
   margin: 0 15px;
 }
+
 .slick-dots li button {
   position: relative;
   text-indent: -9999px;
 }
+
 .slick-dots li button:before {
   position: absolute;
   top: 0;
@@ -378,6 +389,7 @@ main > div {
   text-indent: 0;
   font-size: 16px;
 }
+
 .slick-dots li.slick-active button:before {
   color: #b6e2a2;
 }
@@ -392,7 +404,6 @@ main > div {
 
 .contact img {
   height: 300px;
-
   object-fit: cover;
 }
 
@@ -408,26 +419,21 @@ main > div {
   font-size: 13px;
 }
 
-.contact .contact__btn {
-  width: 10em;
-}
-
 @media screen and (min-width: 800px) {
   .contact {
     flex-direction: row-reverse;
     margin-right: 10vw;
     margin-left: 10vw;
-
     align-items: center;
   }
 
   .contact div {
     padding: 70px;
-    width: 40%;
+    width: 30%;
   }
 
   .contact img {
-    width: 60%;
+    width: 70%;
   }
 }
 
@@ -446,7 +452,7 @@ main > div {
 }
 
 .blog__item-ttl {
-  margin-top: -5px; /* 謎空白消すため。後で治せそうなら直す */
+  margin-top: -5px; /* 空白消すため。後で治せそうなら直す */
   width: 100%;
   height: 3em;
   background: #b6e2a2;
@@ -485,6 +491,7 @@ main > div {
    ======================================= */
 
 footer {
+  padding-top: 80px;
   text-align: center;
 }
 
